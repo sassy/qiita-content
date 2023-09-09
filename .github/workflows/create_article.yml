@@ -13,11 +13,6 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: Set current datetime as env variable
-        env:
-          
-        run: echo "CURRENT_DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-
       - name: Create new branch
         id: create_branch
         env:
