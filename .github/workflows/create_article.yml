@@ -1,5 +1,4 @@
-# Please set 'QIITA_TOKEN' secret to your repository
-name: Publish articles
+name: Create article
 
 on:
   workflow_dispatch:
