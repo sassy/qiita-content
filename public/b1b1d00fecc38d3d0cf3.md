@@ -5,7 +5,7 @@ tags:
   - Android
   - iOS
 private: false
-updated_at: '2016-03-09T17:26:41+09:00'
+updated_at: '2023-09-09T11:37:11+09:00'
 id: b1b1d00fecc38d3d0cf3
 organization_url_name: null
 slide: false

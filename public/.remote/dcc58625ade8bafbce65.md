@@ -4,7 +4,7 @@ tags:
   - Android
   - RubyMotion
 private: false
-updated_at: '2014-09-20T23:20:37+09:00'
+updated_at: '2023-09-09T11:37:11+09:00'
 id: dcc58625ade8bafbce65
 organization_url_name: null
 slide: false
@@ -34,7 +34,7 @@ export RUBYMOTION_ANDROID_NDK=~/android-rubymotion/ndk
 ```
 
 これは、使っているAndroidのSDK/NDKの場所を指定してあげればいいと思いますが、
-developer centerにも書いてある通り、Mac OS X 64bit NDKの32bitターゲットを使ってください。64bitターゲット版は対応してないので、使わないでください。
+developer centerにも書いてあるとおり、Mac OS X 64bit NDKの32bitターゲットを使ってください。64bitターゲット版は対応してないので、使わないでください。
 僕はNDKを入れ直しました。
 
 # プロジェクト作成とビルド
@@ -71,12 +71,12 @@ Motion::Project::App.setup do |app|
 end
 ```
 
-これで、お使いの端末をつなげる、もしくはエミュレータを起動してrakeコマンドを叩けばアプリを動かせます。
+これで、お使いの端末をつなげる、もしくはエミュレータを起動してRakeコマンドを叩けばアプリを動かせます。
 
 # サンプル
 
 サンプルは下記にあるので、参考にするといいでしょう。
 https://github.com/HipByte/RubyMotionSamples/tree/master/android
 
-見てみると、rubyでAndroidのアプリを書く感じがわかります。
+見てみると、RubyでAndroidのアプリを書く感じがわかります。
 Android開発をしている人は、SDKの使い方のノウハウがそのまま生かせそうです。

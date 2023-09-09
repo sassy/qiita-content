@@ -3,7 +3,7 @@ title: '[android-ndk]NativeActivityからJavaのメソッドを呼ぶ方法'
 tags:
   - Android
 private: false
-updated_at: '2014-01-31T18:16:39+09:00'
+updated_at: '2023-09-09T11:37:11+09:00'
 id: 6363aeaca76fd7eba23f
 organization_url_name: null
 slide: false
