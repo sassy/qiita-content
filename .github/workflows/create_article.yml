@@ -52,13 +52,13 @@ jobs:
           add: .
 
       - name: Create pull request
-        uses: repo-sync/pull-request@v2
         env:
-          BRANCH_NAME: ${{ steps.create_branch.outputs.branch_name }}
-        with:
-          source_branch: ${{ env.BRANCH_NAME }}
-          destination_branch: main
-          pr_title: "記事作成"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            -B main \
+            -t '記事作成' \
+            -a ${{ github.actor }} 
+
           
 
