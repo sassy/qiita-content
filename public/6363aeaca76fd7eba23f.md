@@ -12,10 +12,10 @@ slide: false
 * 試したndkのバージョンはandroid-ndk-r9b
 
 #  必要なもの
-* JavaVM *vm
+* JVM *vm
 * JNIEnv *env
 
-JavaVMとJNIEnvはandroid_main()に渡される struct android_app が持っているANativeActivityのメンバからとってくる
+JVMとJNIEnvはandroid_main()に渡される struct android_app が持っているANativeActivityのメンバーからとってくる
 
 ```cpp
 JNIEnv *env = state->activity->env;
@@ -50,11 +50,11 @@ JavaVM *vm = state->activity->vm;
     env->CallStaticIntMethod(log, methodD, tag, message);
 ```
 
-上記はサンプルのため、android/util/Log を呼び出してみたもの(実際は__android_log_printを使った方がよい。
+上記はサンプルのため、android/util/Log を呼び出してみたもの(実際は__android_log_printを使ったほうがよい。
 
 # NativeActivityを拡張したクラスに定義したメソッドを呼び出す方法
 
-Activityにメソッドを定義
+アクティビティにメソッドを定義
 
 ```java:MyTest.java
 public class MyTest extends NativeActivity {
@@ -71,7 +71,7 @@ public class MyTest extends NativeActivity {
 ```
 
 下記の用にshowToastメソッドを呼び出す。
-Activityのオブジェクトは、struct android_appのNativeActivityが持っているclazzを利用します。
+アクティビティのオブジェクトは、struct android_appのNativeActivityが持っているclazzを利用します。
 
 ```cpp:Activityのメソッドを呼び出す
     vm->AttachCurrentThread(&env, NULL);

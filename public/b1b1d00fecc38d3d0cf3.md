@@ -45,7 +45,7 @@ slide: false
 
 <img width="642" alt="font.png" src="https://qiita-image-store.s3.amazonaws.com/0/4044/3d47d6d1-f68f-a831-5035-3b468fa5b38f.png">
 
-左がPCのGoogle Chrome(version48) 右が iOS9.1(シュミレータ)のWebView
+左がPCのGoogle Chrome(version48) 右が iOS9.1(シミュレータ)のWebView
 
 iOSのWebViewは日本語が等幅フォント以外はすべてゴシック体のフォントになってしまっている。
 AndroidのWebView(Android5.0/Nexus9)も同様。

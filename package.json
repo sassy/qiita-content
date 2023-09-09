@@ -6,6 +6,7 @@
   "scripts": {
     "preview": "qiita preview",
     "textlint:article": "textlint public/*.md",
+    "textlint:fix": "textlint --fix public/*.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
