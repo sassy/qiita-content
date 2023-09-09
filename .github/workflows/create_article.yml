@@ -58,7 +58,9 @@ jobs:
           gh pr create \
             -B main \
             -t '記事作成' \
-            -a ${{ github.actor }} 
+            -a ${{ github.actor }}  \
+            --body ""
+
 
           
 
