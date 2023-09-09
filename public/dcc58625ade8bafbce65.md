@@ -4,7 +4,7 @@ tags:
   - Android
   - RubyMotion
 private: false
-updated_at: '2014-09-20T23:20:37+09:00'
+updated_at: '2023-09-09T11:37:11+09:00'
 id: dcc58625ade8bafbce65
 organization_url_name: null
 slide: false

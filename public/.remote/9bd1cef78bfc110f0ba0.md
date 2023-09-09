@@ -3,7 +3,7 @@ title: ngModelで配列参照した時の悩み
 tags:
   - Angular
 private: false
-updated_at: '2017-12-09T07:01:10+09:00'
+updated_at: '2023-09-09T11:37:11+09:00'
 id: 9bd1cef78bfc110f0ba0
 organization_url_name: null
 slide: false
@@ -43,7 +43,7 @@ Angular Advent Calendar 2017 9日目の記事です。
 
 <img width="195" alt="スクリーンショット 2017-12-03 12.17.20.png" src="https://qiita-image-store.s3.amazonaws.com/0/4044/94493977-2175-ee53-abee-6ac60589a09f.png">
 
-そして文字を入力します。すると・・・・
+そして文字を入力します。すると…・
 
 <img width="306" alt="スクリーンショット 2017-12-03 12.17.53.png" src="https://qiita-image-store.s3.amazonaws.com/0/4044/f3c483bd-62a7-b5f8-bd7d-7b2fbe40e358.png">
 
@@ -79,7 +79,7 @@ export class HelloComponent  {
 </div>
 ```
 
-配列を直接参照しなければいいので、配列のメンバを参照するとフォーカスが外れて連続で文字が入力できなくなる問題が解決します。
+配列を直接参照しなければいいので、配列のメンバーを参照するとフォーカスが外れて連続で文字が入力できなくなる問題が解決します。
 まあでもこの方法はいけてないですね。
 
 ## 解決策2:trackByを使う
@@ -114,7 +114,7 @@ export class HelloComponent {
 これで解決します。
 
 trackBy関数とは、ngForによるオブジェクトの追跡のためのキーを決める式です。
-どうも文字を入力すると、angularは今どの配列を参照しているかわからなくなり、フォーカスが外れてしまうのですが、
+どうも文字を入力すると、Angularは今どの配列を参照しているかわからなくなり、フォーカスが外れてしまうのですが、
 trackByでキーを教えてあげると、配列のどの位置を入力されているのがわかるようになり、そのまま入力できるようです。
 
 これで解決できました。

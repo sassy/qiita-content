@@ -3,7 +3,7 @@ title: Glacierと Glacier Deep Archive
 tags:
   - AWS
 private: false
-updated_at: '2020-11-08T16:10:45+09:00'
+updated_at: '2023-09-09T11:37:11+09:00'
 id: 170b96f4a1dde4cebea3
 organization_url_name: null
 slide: false
