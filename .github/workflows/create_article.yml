@@ -24,7 +24,6 @@ jobs:
         run: |
           DATE=`date +"%Y%m%d%H%M%S"`
           BRANCH_NAME="feature/$DATE"
-          git checkout -b "$BRANCH_NAME"
           git switch -c "$BRANCH_NAME"
           git push -u origin "$BRANCH_NAME"
           echo ::set-output name=branch_name::$BRANCH_NAME
