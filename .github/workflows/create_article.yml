@@ -7,9 +7,7 @@ jobs:
   create_articles:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+  
     steps:
       - uses: actions/checkout@v3
         with:
@@ -17,15 +15,19 @@ jobs:
       
       - name: Set current datetime as env variable
         env:
-          TZ: 'Asia/Tokyo'
+          
         run: echo "CURRENT_DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
 
       - name: Create new branch
+        id: create_branch
         env:
+          TZ: 'Asia/Tokyo'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git switch -c feature/article_${{ env.CURRENT_DATETIME }}
-          git push -u origin feature/article_${{ env.CURRENT_DATETIME }}
+          BRANCH_NAME=`feature/article +'%Y%m%d%H%M%S'`
+          git switch -c "$BRANCH_NAME"
+          git push -u origin "$BRANCH_NAME"
+          echo ::set-output name=branch_name::$BRANCH_NAME
 
       - uses: actions/setup-node@v3
         with:
@@ -43,15 +45,19 @@ jobs:
 
       - name: Add and Commit
         uses: EndBug/add-and-commit@v7
+        env:
+          BRANCH_NAME: ${{ steps.create_branch.outputs.branch_name }}
         with:
-          branch: feature/article_${{ env.CURRENT_DATETIME }}
+          branch: ${{ env.BRANCH_NAME }}
           message: "記事作成"
           add: .
 
       - name: Create pull request
         uses: repo-sync/pull-request@v2
+        env:
+          BRANCH_NAME: ${{ steps.create_branch.outputs.branch_name }}
         with:
-          source_branch: feature/article_${{ env.CURRENT_DATETIME }}
+          source_branch: ${{ env.BRANCH_NAME }}
           destination_branch: main
           pr_title: "記事作成"
           github_token: ${{ secrets.GITHUB_TOKEN }}
