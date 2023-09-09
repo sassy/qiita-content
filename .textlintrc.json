@@ -1,0 +1,27 @@
+{
+  "filters": {},
+  "rules": {
+    "first-sentence-length": true,
+    "ja-hiragana-fukushi": true,
+    "ja-hiragana-hojodoushi": true,
+    "ja-hiragana-keishikimeishi": true,
+    "ja-no-abusage": true,
+    "ja-no-mixed-period": true,
+    "ja-no-redundant-expression": true,
+    "ja-no-weak-phrase": true,
+    "ja-unnatural-alphabet": true,
+    "max-kanji-continuous-len": true,
+    "max-ten": true,
+    "no-double-negative-ja": true,
+    "no-doubled-conjunction": true,
+    "no-doubled-conjunctive-particle-ga": true,
+    "no-doubled-joshi": true,
+    "no-dropping-the-ra": true,
+    "no-hankaku-kana": true,
+    "no-mix-dearu-desumasu": true,
+    "no-mixed-zenkaku-and-hankaku-alphabet": true,
+    "prefer-tari-tari": true,
+    "sentence-length": true,
+    "spellcheck-tech-word": true,
+  }
+}
