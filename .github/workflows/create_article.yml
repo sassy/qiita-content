@@ -19,7 +19,7 @@ jobs:
           TZ: 'Asia/Tokyo'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          BRANCH_NAME=`feature/article +'%Y%m%d%H%M%S'`
+          BRANCH_NAME='%Y%m%d%H%M%S'
           git switch -c "$BRANCH_NAME"
           git push -u origin "$BRANCH_NAME"
           echo ::set-output name=branch_name::$BRANCH_NAME
