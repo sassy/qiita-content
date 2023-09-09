@@ -19,7 +19,7 @@ jobs:
       - name: Create new branch
         env:
           TZ: 'Asia/Tokyo'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           DATE=`date +"%Y%m%d%H%M%S"`
           echo "CURRENT_DATETIME=$DATE" >> $GITHUB_ENV
@@ -44,7 +44,7 @@ jobs:
 
       - name: Add and Commit
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           git config --global user.email "sassy.watanabe@gmail.com"
           git config --global user.name "sassy(bot)"
@@ -54,7 +54,7 @@ jobs:
 
       - name: Create pull request
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           gh pr create \
             -B main \
