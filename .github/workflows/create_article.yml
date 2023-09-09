@@ -17,16 +17,16 @@ jobs:
           fetch-depth: 0
       
       - name: Create new branch
-        id: create_branch
         env:
           TZ: 'Asia/Tokyo'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           DATE=`date +"%Y%m%d%H%M%S"`
+          echo "CURRENT_DATETIME=$DATE" >> $GITHUB_ENV
           BRANCH_NAME="feature/$DATE"
           git switch -c "$BRANCH_NAME"
           git push -u origin "$BRANCH_NAME"
-          echo ::set-output name=branch_name::$BRANCH_NAME
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
 
       - uses: actions/setup-node@v3
         with:
@@ -45,7 +45,7 @@ jobs:
       - name: Add and Commit
         uses: EndBug/add-and-commit@v7
         env:
-          BRANCH_NAME: ${{ steps.create_branch.outputs.branch_name }}
+          BRANCH_NAME: ${{ env.BRANCH_NAME}}
         with:
           branch: ${{ env.BRANCH_NAME }}
           message: "記事作成"
