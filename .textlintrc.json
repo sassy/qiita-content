@@ -22,6 +22,6 @@
     "no-mixed-zenkaku-and-hankaku-alphabet": true,
     "prefer-tari-tari": true,
     "sentence-length": true,
-    "spellcheck-tech-word": true,
+    "spellcheck-tech-word": true
   }
 }
